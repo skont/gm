@@ -1,27 +1,23 @@
 {% extends 'master' %}
 
 {% block content %}
-
-
 <div>
   <p>
     Below is the list of all the awesome posts created by all of us. You can also
     contribute by clicking the below button.
   </p>
-  <a href="posts/create" class="btn btn-success btn-block"> Create New Post </a>
+  <a href="posts/create" class="waves-effect waves-light btn"> Create New Post </a>
   <hr>
 </div>
 
-
-  <div class="posts-wrapper">
-    {% for post in posts %} 
-      <div class="post">
-      <h2><a href="posts/{{ post.id }}"> {{ post.title }} </a></h2>
-      <p> {{ post.content | truncate(150) }} </p>
-      </div>
+<table class="striped">
+<thead><tr><th>Title</th><th>Description</th></tr></thead>
+{% for post in posts %} 
+  <tbody><tr><td><a href="posts/{{ post.id }}"> {{ post.title }} </a> </td><td>{{ post.content | truncate(150) }}</td></tr></tbody>
 {% else %}
   <h2> No posts found </h2>
 {% endfor %}
-  </div>
+  </div> 
+</table>
 
 {% endblock %}

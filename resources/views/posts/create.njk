@@ -5,17 +5,21 @@
 
     {{ csrfField }}
 
-    <fieldset class="form-group">
-      {{ form.label('Post Title') }}
-      {{ form.text('title', null, { class: 'form-control' }) }}
-    </fieldset>
+    
+    <label>
+      Post Title <span class='req'>*</span>
+      <!-- {{ form.label('Post Title') }} -->
+      {{ form.text('title', null, { class: 'width-50' }) }}
+    </label>
 
-    <fieldset class="form-group">
+    <label>
       {{ form.label('Description') }}
-      {{ form.textarea('content', null, { class: 'form-control' }) }}
-    </fieldset>
+      {{ form.textarea('content', null, { class: 'width-50' }) }}
+    </label>
 
-    {{ form.submit('Publish', 'publish', { class: 'btn btn-primary btn-block' }) }}
-
+    <p>
+    {{ form.submit('Publish', 'publish', { class: 'waves-effect waves-light btn' }) }}
+    {{ form.resetButton('Clear', null, {class: 'waves-effect waves-light btn'}) }}
+    </p>
   {{ form.close() }}
 {% endblock %}
