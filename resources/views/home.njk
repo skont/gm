@@ -10,14 +10,18 @@
   <hr>
 </div>
 
-<table class="striped">
+<table class="highlight">
 <thead><tr><th>Title</th><th>Description</th></tr></thead>
-{% for post in posts %} 
-  <tbody><tr><td><a href="posts/{{ post.id }}"> {{ post.title }} </a> </td><td>{{ post.content | truncate(150) }}</td></tr></tbody>
-{% else %}
-  <h2> No posts found </h2>
-{% endfor %}
-  </div> 
+  <tbody>
+  {% for post in posts %} 
+    <tr>
+      <td><a href="posts/{{ post.id }}"> {{ post.title }} </a> </td>
+      <td>{{ post.content | truncate(150) }}</td>
+    </tr>
+  {% else %}
+    <h2> No posts found </h2>
+  {% endfor %}
+   </tbody>  
 </table>
 
 {% endblock %}
