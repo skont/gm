@@ -17,10 +17,11 @@
 
 const Route = use('Route')
 
-Route.get('/', 'PostsController.index')
+
 Route.on('/about').render('about')
 Route.on('/contact').render('contact')
 
+Route.get('/', 'PostsController.index')
 Route.get('posts/create', 'PostsController.create')
 Route.post('posts', 'PostsController.store')
 Route.get('posts/:id', 'PostsController.show')
